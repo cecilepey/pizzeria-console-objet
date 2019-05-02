@@ -8,13 +8,13 @@ package fr.pizzeria.model;
  */
 public class Pizza {
 
-	/** id : int */
+	/** id : int : variable qui génère un id unique pour chaque pizza */
 	private static int id = 0;
-	/** code : String */
+	/** code : String : code de la pizza */
 	private String code;
-	/** libelle : String */
+	/** libelle : String : nom de la pizza */
 	private String libelle;
-	/** prix : double */
+	/** prix : double : prix de la pizza */
 	private double prix;
 
 	/**
@@ -29,6 +29,30 @@ public class Pizza {
 		this.libelle = libelle;
 		this.prix = prix;
 		id++;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pizza other = (Pizza) obj;
+		if (code == null) {
+			if (other.code != null)
+				return false;
+		} else if (!code.equals(other.code))
+			return false;
+		if (libelle == null) {
+			if (other.libelle != null)
+				return false;
+		} else if (!libelle.equals(other.libelle))
+			return false;
+		if (Double.doubleToLongBits(prix) != Double.doubleToLongBits(other.prix))
+			return false;
+		return true;
 	}
 
 	@Override
@@ -52,7 +76,7 @@ public class Pizza {
 	 *            the id to set
 	 */
 	public void setId(int id) {
-		this.id = id;
+		Pizza.id = id;
 	}
 
 	/**
