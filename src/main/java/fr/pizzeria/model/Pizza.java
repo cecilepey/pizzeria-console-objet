@@ -1,7 +1,5 @@
 package fr.pizzeria.model;
 
-import java.util.ArrayList;
-
 /**
  * Classe qui représente une pizza
  * 
@@ -31,10 +29,6 @@ public class Pizza {
 		this.libelle = libelle;
 		this.prix = prix;
 		id++;
-	}
-
-	public void ajouterPizza(ArrayList list) {
-		list.add(list);
 	}
 
 	@Override
