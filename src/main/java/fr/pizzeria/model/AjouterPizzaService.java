@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class AjouterPizzaService extends MenuService {
 
 	@Override
-	public void executeUC(Scanner scanner, PizzaMemDao dao) {
+	public void executeUC(Scanner scanner, IPizzaDao dao) {
 
 		String code;
 		String nom;
@@ -31,7 +31,7 @@ public class AjouterPizzaService extends MenuService {
 		Pizza pizza = new Pizza(nom, code, prix);
 
 		dao.saveNewPizza(pizza);
-		System.out.println("\nLa pizza est bien ajouté ! ");
+		System.out.println("La pizza est bien ajouté ! ");
 	}
 
 }

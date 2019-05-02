@@ -6,6 +6,7 @@ package fr.diginamic.pizzeria_console_objet;
 import java.util.Scanner;
 
 import fr.pizzeria.model.AjouterPizzaService;
+import fr.pizzeria.model.IPizzaDao;
 import fr.pizzeria.model.ListerPizzasService;
 import fr.pizzeria.model.ModifierPizzaService;
 import fr.pizzeria.model.PizzaMemDao;
@@ -23,15 +24,17 @@ public class PizzeriaAdminConsoleApp {
 
 		Scanner sc = new Scanner(System.in);
 
-		PizzaMemDao pizzaDao = new PizzaMemDao();
+		IPizzaDao pizzaDao = new PizzaMemDao();
 
-		String menu = "\n***** Pizzeria Administration *****\n1. Lister les pizzas\n2. Ajouter une nouvelle pizza\n3. Mettre à jour une pizza\n4. Supprimer une pizza\n99. Sortir\n";
+		String menu = "\n***** Pizzeria Administration *****\n1. Lister les pizzas\n2. Ajouter une nouvelle pizza\n3. Mettre à jour une pizza\n4. Supprimer une pizza\n99. Sortir\nMerci de choisir une option :\n";
 
-		System.out.println(menu);
-
-		String choix = sc.nextLine();
+		String choix = "1";
 
 		while (!choix.equals("99")) {
+
+			System.out.println(menu);
+
+			choix = sc.nextLine();
 
 			switch (choix) {
 			case "1":
@@ -40,10 +43,6 @@ public class PizzeriaAdminConsoleApp {
 
 				lister.executeUC(sc, pizzaDao);
 
-				System.out.println(menu);
-
-				choix = sc.nextLine();
-
 				break;
 			case "2":
 
@@ -51,19 +50,12 @@ public class PizzeriaAdminConsoleApp {
 
 				ajouter.executeUC(sc, pizzaDao);
 
-				System.out.println(menu);
-
-				choix = sc.nextLine();
 				break;
 			case "3":
 
 				ModifierPizzaService modifier = new ModifierPizzaService();
 
 				modifier.executeUC(sc, pizzaDao);
-
-				System.out.println(menu);
-
-				choix = sc.nextLine();
 
 				break;
 			case "4":
@@ -72,14 +64,14 @@ public class PizzeriaAdminConsoleApp {
 
 				supprimer.executeUC(sc, pizzaDao);
 
-				System.out.println(menu);
-				choix = sc.nextLine();
-
 				break;
 
 			default:
-				System.out.println(menu);
-				choix = sc.nextLine();
+				if (choix.equals("99")) {
+					break;
+				} else {
+					System.out.println("Vous n'avez pas fait un choix valide");
+				}
 				break;
 			}
 		}
@@ -87,7 +79,7 @@ public class PizzeriaAdminConsoleApp {
 		if (choix.equals("99"))
 
 		{
-			System.out.println("Au revoir :(");
+			System.out.println("\nAu revoir !");
 		}
 
 	}

@@ -7,6 +7,7 @@ import java.util.List;
 
 /**
  * Interface qui gère les méthodes faire des actions sur la liste de pizza
+ * persistence des pizza = stockage des pizza
  * 
  * @author Cécile Peyras
  *

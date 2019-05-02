@@ -14,9 +14,9 @@ import java.util.Scanner;
 public class SupprimerPizzaService extends MenuService {
 
 	@Override
-	public void executeUC(Scanner scanner, PizzaMemDao dao) {
+	public void executeUC(Scanner scanner, IPizzaDao dao) {
 
-		System.out.println("Veuillez choisir le code de la pizza à modifier : ");
+		System.out.println("\nVeuillez choisir le code de la pizza à modifier : ");
 
 		String code = scanner.nextLine();
 
@@ -26,7 +26,7 @@ public class SupprimerPizzaService extends MenuService {
 			System.out.println("\nLa pizza a bien été supprimée !");
 
 		} else {
-			System.out.println("Vous n'avez pas entré un code valide");
+			System.out.println("Suppression impossible, vous n'avez pas entré un code valide");
 
 		}
 

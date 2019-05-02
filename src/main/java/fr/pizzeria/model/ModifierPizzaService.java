@@ -11,13 +11,13 @@ import java.util.Scanner;
 public class ModifierPizzaService extends MenuService {
 
 	@Override
-	public void executeUC(Scanner scanner, PizzaMemDao dao) {
+	public void executeUC(Scanner scanner, IPizzaDao dao) {
 
 		String nom;
 		String prixStr;
 		String newCode;
 
-		System.out.println("Veuillez choisir le code de la pizza à modifier :");
+		System.out.println("\nVeuillez choisir le code de la pizza à modifier :");
 		String code = scanner.nextLine();
 
 		if (dao.pizzaExists(code)) {
@@ -34,7 +34,7 @@ public class ModifierPizzaService extends MenuService {
 			System.out.println("\nLa pizza a bien été modifiée !");
 
 		} else {
-			System.out.println("Vous n'avez pas entré un code valide");
+			System.out.println("Modification impossible, vous n'avez pas entré un code valide");
 
 		}
 
