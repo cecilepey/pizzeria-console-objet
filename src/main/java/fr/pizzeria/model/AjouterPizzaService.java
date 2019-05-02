@@ -5,6 +5,8 @@ package fr.pizzeria.model;
 
 import java.util.Scanner;
 
+import fr.pizzeria.exception.SavePizzaException;
+
 /**
  * Classe qui gère l'exécution de l'ajout d'une pizza
  * 
@@ -14,7 +16,7 @@ import java.util.Scanner;
 public class AjouterPizzaService extends MenuService {
 
 	@Override
-	public void executeUC(Scanner scanner, IPizzaDao dao) {
+	public void executeUC(Scanner scanner, IPizzaDao dao) throws SavePizzaException {
 
 		String code;
 		String nom;

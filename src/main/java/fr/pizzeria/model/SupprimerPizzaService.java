@@ -5,6 +5,8 @@ package fr.pizzeria.model;
 
 import java.util.Scanner;
 
+import fr.pizzeria.exception.DeletePizzaException;
+
 /**
  * Classe qui gère l'exécution de la suppression d'une pizza
  * 
@@ -14,7 +16,7 @@ import java.util.Scanner;
 public class SupprimerPizzaService extends MenuService {
 
 	@Override
-	public void executeUC(Scanner scanner, IPizzaDao dao) {
+	public void executeUC(Scanner scanner, IPizzaDao dao) throws DeletePizzaException {
 
 		System.out.println("\nVeuillez choisir le code de la pizza à modifier : ");
 

@@ -2,6 +2,8 @@ package fr.pizzeria.model;
 
 import java.util.Scanner;
 
+import fr.pizzeria.exception.UpdatePizzaException;
+
 /**
  * Classe qui gère l'exécution de la modification de la pizza
  * 
@@ -11,7 +13,7 @@ import java.util.Scanner;
 public class ModifierPizzaService extends MenuService {
 
 	@Override
-	public void executeUC(Scanner scanner, IPizzaDao dao) {
+	public void executeUC(Scanner scanner, IPizzaDao dao) throws UpdatePizzaException {
 
 		String nom;
 		String prixStr;
