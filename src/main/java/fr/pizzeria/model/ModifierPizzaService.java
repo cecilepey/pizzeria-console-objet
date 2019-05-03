@@ -24,7 +24,7 @@ public class ModifierPizzaService extends MenuService {
 		System.out.println("\nVeuillez choisir le code de la pizza à modifier :");
 		String code = scanner.nextLine();
 
-		if (dao.pizzaExists(code) == false) {
+		if (!dao.pizzaExists(code)) {
 
 			throw new UpdatePizzaException("Le code saisie n'existe pas !");
 

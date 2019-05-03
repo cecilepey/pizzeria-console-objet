@@ -22,7 +22,7 @@ public class SupprimerPizzaService extends MenuService {
 
 		String code = scanner.nextLine();
 
-		if (dao.pizzaExists(code) == false) {
+		if (!dao.pizzaExists(code)) {
 
 			throw new DeletePizzaException("Cette pizza n'existe pas");
 

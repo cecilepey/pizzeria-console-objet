@@ -5,6 +5,8 @@ package fr.pizzeria.model;
 
 import java.util.Scanner;
 
+import org.apache.commons.lang3.math.NumberUtils;
+
 import fr.pizzeria.exception.SavePizzaException;
 
 /**
@@ -24,16 +26,33 @@ public class AjouterPizzaService extends MenuService {
 
 		System.out.println("\nVeuillez saisir le code de la pizza à ajouter : ");
 		code = scanner.nextLine();
-		System.out.println("Veuillez saisir le nom sans espace :");
-		nom = scanner.nextLine();
-		System.out.println("Veuillez saisir le prix : ");
-		prixStr = scanner.nextLine();
-		Double prix = Double.parseDouble(prixStr);
 
-		Pizza pizza = new Pizza(nom, code, prix);
+		if (code.length() != 3) {
 
-		dao.saveNewPizza(pizza);
-		System.out.println("La pizza est bien ajouté ! ");
+			throw new SavePizzaException("Vous n'avez pas entré de code de 3 caractères");
+		} else {
+			System.out.println("Veuillez saisir le nom sans espace :");
+			nom = scanner.nextLine();
+
+			if (nom.isEmpty()) {
+				throw new SavePizzaException("Vous n'avez pas entré de nom");
+			} else {
+				System.out.println("Veuillez saisir le prix : ");
+				prixStr = scanner.nextLine();
+				if (!NumberUtils.isCreatable(prixStr)) {
+					throw new SavePizzaException("Vous n'avez pas entré un prix valide");
+				} else {
+					Double prix = Double.parseDouble(prixStr);
+
+					Pizza pizza = new Pizza(nom, code, prix);
+
+					dao.saveNewPizza(pizza);
+					System.out.println("La pizza est bien ajouté ! ");
+				}
+			}
+
+		}
+
 	}
 
 }
