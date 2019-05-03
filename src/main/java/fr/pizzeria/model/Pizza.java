@@ -9,7 +9,7 @@ package fr.pizzeria.model;
 public class Pizza {
 
 	/** id : int : variable qui génère un id unique pour chaque pizza */
-	private static int id = 0;
+	private static int id = 1;
 	/** code : String : code de la pizza */
 	private String code;
 	/** libelle : String : nom de la pizza */
@@ -60,7 +60,10 @@ public class Pizza {
 
 	@Override
 	public String toString() {
-		return code + "->" + libelle + " (" + prix + ")" + " - categorie : " + categorie;
+
+		return new StringBuilder().append(code).append("-> ").append(libelle).append(" (").append(prix)
+				.append("€) - catégorie : ").append(categorie).toString();
+
 	}
 
 	/**

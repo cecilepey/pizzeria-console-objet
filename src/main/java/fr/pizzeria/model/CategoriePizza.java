@@ -9,10 +9,16 @@ package fr.pizzeria.model;
  * @author Cécile Peyras
  *
  */
+
 public enum CategoriePizza {
 
-	VIANDE("Viande"), POISSON("Poisson"), SANS_VIANDE("Sans Viande");
-
+	/** VIANDE : CategoriePizza = catégorie des pizzas avec viande */
+	VIANDE("Viande"),
+	/** POISSON : CategoriePizza = catégorie des pizzas au poisson */
+	POISSON("Poisson"),
+	/** SANS_VIANDE : CategoriePizza = catégorie des pizzas végétarienne */
+	SANS_VIANDE("Sans Viande");
+	/** categorie : String */
 	private String categorie;
 
 	/**
@@ -24,11 +30,17 @@ public enum CategoriePizza {
 		this.categorie = categorie;
 	}
 
+	/**
+	 * méthode qui vérifie qu'une catégorie existe bien
+	 * 
+	 * @param categorie
+	 * @return booleen
+	 */
 	static boolean categorieExists(String categorie) {
 
 		CategoriePizza[] cate = CategoriePizza.values();
-		for (CategoriePizza j : cate) {
-			if (j.name().equals(categorie)) {
+		for (CategoriePizza c : cate) {
+			if (c.name().equals(categorie)) {
 				return true;
 			}
 
