@@ -20,6 +20,8 @@ public class ModifierPizzaService extends MenuService {
 		String nom;
 		String prixStr;
 		String newCode;
+		String categorie;
+		CategoriePizza categoriePizza;
 
 		System.out.println("\nVeuillez choisir le code de la pizza à modifier :");
 		String code = scanner.nextLine();
@@ -49,8 +51,18 @@ public class ModifierPizzaService extends MenuService {
 					} else {
 						Double prix = Double.parseDouble(prixStr);
 
-						dao.updatePizza(code, new Pizza(nom, newCode, prix));
-						System.out.println("\nLa pizza a bien été modifiée !");
+						System.out.println("Veuillez saisir la catégorie : VIANDE, POISSON, SANS_VIANDE :");
+						categorie = scanner.nextLine();
+
+						if (!CategoriePizza.categorieExists(categorie)) {
+							throw new UpdatePizzaException("Vous n'avez pas entré un nom de catégorie correct");
+
+						} else {
+							categoriePizza = CategoriePizza.valueOf(categorie);
+							dao.updatePizza(code, new Pizza(nom, newCode, prix, categoriePizza));
+							System.out.println("\nLa pizza a bien été modifiée !");
+
+						}
 
 					}
 				}

@@ -16,6 +16,8 @@ public class Pizza {
 	private String libelle;
 	/** prix : double : prix de la pizza */
 	private double prix;
+	/** categorie : CategoriePizza : catégorie de la pizza */
+	private CategoriePizza categorie;
 
 	/**
 	 * Constructeur
@@ -24,10 +26,11 @@ public class Pizza {
 	 * @param libelle
 	 * @param prix
 	 */
-	public Pizza(String libelle, String code, double prix) {
+	public Pizza(String libelle, String code, double prix, CategoriePizza categorie) {
 		this.code = code;
 		this.libelle = libelle;
 		this.prix = prix;
+		this.categorie = categorie;
 		id++;
 	}
 
@@ -57,7 +60,7 @@ public class Pizza {
 
 	@Override
 	public String toString() {
-		return code + "->" + libelle + " (" + prix + ")";
+		return code + "->" + libelle + " (" + prix + ")" + " - categorie : " + categorie;
 	}
 
 	/**
@@ -134,6 +137,25 @@ public class Pizza {
 	 */
 	public void setPrix(double prix) {
 		this.prix = prix;
+	}
+
+	/**
+	 * Getter
+	 * 
+	 * @return the categorie
+	 */
+	public CategoriePizza getCategorie() {
+		return categorie;
+	}
+
+	/**
+	 * Setter
+	 * 
+	 * @param categorie
+	 *            the categorie to set
+	 */
+	public void setCategorie(CategoriePizza categorie) {
+		this.categorie = categorie;
 	}
 
 }

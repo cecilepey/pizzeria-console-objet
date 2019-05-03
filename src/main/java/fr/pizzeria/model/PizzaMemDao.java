@@ -24,14 +24,14 @@ public class PizzaMemDao implements IPizzaDao {
 	 */
 	public PizzaMemDao() {
 
-		listePizza.add(new Pizza("Pépéroni", "PEP", 12.50));
-		listePizza.add(new Pizza("Margherita", "MAR", 14));
-		listePizza.add(new Pizza("La Reine", "REIN", 11.50));
-		listePizza.add(new Pizza("La 4 fromages", "FRO", 12));
-		listePizza.add(new Pizza("La cannibale", "CAN", 12.50));
-		listePizza.add(new Pizza("La savoyarde", "SAV", 13));
-		listePizza.add(new Pizza("L’orientale", "ORI", 13.50));
-		listePizza.add(new Pizza("L’indienne", "IND", 14));
+		listePizza.add(new Pizza("Pépéroni", "PEP", 12.50, CategoriePizza.SANS_VIANDE));
+		listePizza.add(new Pizza("Margherita", "MAR", 14, CategoriePizza.SANS_VIANDE));
+		listePizza.add(new Pizza("La Reine", "REIN", 11.50, CategoriePizza.VIANDE));
+		listePizza.add(new Pizza("La 4 fromages", "FRO", 12, CategoriePizza.SANS_VIANDE));
+		listePizza.add(new Pizza("La cannibale", "CAN", 12.50, CategoriePizza.VIANDE));
+		listePizza.add(new Pizza("La savoyarde", "SAV", 13, CategoriePizza.VIANDE));
+		listePizza.add(new Pizza("L’orientale", "ORI", 13.50, CategoriePizza.VIANDE));
+		listePizza.add(new Pizza("L’indienne", "IND", 14, CategoriePizza.VIANDE));
 
 	}
 

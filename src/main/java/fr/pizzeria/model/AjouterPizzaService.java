@@ -23,6 +23,8 @@ public class AjouterPizzaService extends MenuService {
 		String code;
 		String nom;
 		String prixStr;
+		String categorie;
+		CategoriePizza categoriePizza;
 
 		System.out.println("\nVeuillez saisir le code de la pizza à ajouter : ");
 		code = scanner.nextLine();
@@ -43,11 +45,21 @@ public class AjouterPizzaService extends MenuService {
 					throw new SavePizzaException("Vous n'avez pas entré un prix valide");
 				} else {
 					Double prix = Double.parseDouble(prixStr);
+					System.out.println("Veuillez saisir la catégorie : VIANDE, POISSON, SANS_VIANDE :");
+					categorie = scanner.nextLine();
 
-					Pizza pizza = new Pizza(nom, code, prix);
+					if (!CategoriePizza.categorieExists(categorie)) {
+						throw new SavePizzaException("Vous n'avez pas entré un nom de catégorie correct");
 
-					dao.saveNewPizza(pizza);
-					System.out.println("La pizza est bien ajouté ! ");
+					} else {
+						categoriePizza = CategoriePizza.valueOf(categorie);
+						Pizza pizza = new Pizza(nom, code, prix, categoriePizza);
+
+						dao.saveNewPizza(pizza);
+						System.out.println("La pizza est bien ajouté ! ");
+
+					}
+
 				}
 			}
 
