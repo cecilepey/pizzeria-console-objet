@@ -2,6 +2,8 @@ package fr.pizzeria.model;
 
 import java.util.Scanner;
 
+import org.apache.commons.lang3.math.NumberUtils;
+
 import fr.pizzeria.exception.UpdatePizzaException;
 
 /**
@@ -22,21 +24,38 @@ public class ModifierPizzaService extends MenuService {
 		System.out.println("\nVeuillez choisir le code de la pizza à modifier :");
 		String code = scanner.nextLine();
 
-		if (dao.pizzaExists(code)) {
-			System.out.println("\nVeuillez saisir le nouveau code : ");
-			newCode = scanner.nextLine();
-			System.out.println("Veuillez saisir le nouveau nom sans espace :");
-			nom = scanner.nextLine();
-			System.out.println("Veuillez saisir le nouveau prix : ");
-			prixStr = scanner.nextLine();
-			double prix = Double.parseDouble(prixStr);
+		if (dao.pizzaExists(code) == false) {
 
-			dao.updatePizza(code, new Pizza(nom, newCode, prix));
-
-			System.out.println("\nLa pizza a bien été modifiée !");
+			throw new UpdatePizzaException("Le code saisie n'existe pas !");
 
 		} else {
-			System.out.println("Modification impossible, vous n'avez pas entré un code valide");
+			System.out.println("\nVeuillez saisir le nouveau code : ");
+			newCode = scanner.nextLine();
+
+			if (newCode.length() != 3) {
+
+				throw new UpdatePizzaException("Vous n'avez pas entré de code de 3 caractères");
+			} else {
+				System.out.println("Veuillez saisir le nom sans espace :");
+				nom = scanner.nextLine();
+
+				if (nom.isEmpty()) {
+					throw new UpdatePizzaException("Vous n'avez pas entré de nom");
+				} else {
+					System.out.println("Veuillez saisir le prix : ");
+					prixStr = scanner.nextLine();
+					if (!NumberUtils.isCreatable(prixStr)) {
+						throw new UpdatePizzaException("Vous n'avez pas entré un prix valide");
+					} else {
+						Double prix = Double.parseDouble(prixStr);
+
+						dao.updatePizza(code, new Pizza(nom, newCode, prix));
+						System.out.println("\nLa pizza a bien été modifiée !");
+
+					}
+				}
+
+			}
 
 		}
 

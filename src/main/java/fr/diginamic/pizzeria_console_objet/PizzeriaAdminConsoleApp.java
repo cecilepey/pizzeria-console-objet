@@ -5,6 +5,9 @@ package fr.diginamic.pizzeria_console_objet;
 
 import java.util.Scanner;
 
+import fr.pizzeria.exception.DeletePizzaException;
+import fr.pizzeria.exception.SavePizzaException;
+import fr.pizzeria.exception.UpdatePizzaException;
 import fr.pizzeria.model.AjouterPizzaService;
 import fr.pizzeria.model.IPizzaDao;
 import fr.pizzeria.model.ListerPizzasService;
@@ -20,7 +23,7 @@ import fr.pizzeria.model.SupprimerPizzaService;
  */
 public class PizzeriaAdminConsoleApp {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SavePizzaException, UpdatePizzaException, DeletePizzaException {
 
 		Scanner sc = new Scanner(System.in);
 
@@ -48,21 +51,33 @@ public class PizzeriaAdminConsoleApp {
 
 				AjouterPizzaService ajouter = new AjouterPizzaService();
 
-				ajouter.executeUC(sc, pizzaDao);
+				try {
+					ajouter.executeUC(sc, pizzaDao);
+				} catch (SavePizzaException e) {
+					System.out.println(e.getMessage());
+				}
 
 				break;
 			case "3":
 
 				ModifierPizzaService modifier = new ModifierPizzaService();
 
-				modifier.executeUC(sc, pizzaDao);
+				try {
+					modifier.executeUC(sc, pizzaDao);
+				} catch (UpdatePizzaException e) {
+					System.out.println(e.getMessage());
+				}
 
 				break;
 			case "4":
 
 				SupprimerPizzaService supprimer = new SupprimerPizzaService();
 
-				supprimer.executeUC(sc, pizzaDao);
+				try {
+					supprimer.executeUC(sc, pizzaDao);
+				} catch (DeletePizzaException e) {
+					System.out.println(e.getMessage());
+				}
 
 				break;
 

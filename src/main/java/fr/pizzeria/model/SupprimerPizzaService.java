@@ -22,13 +22,14 @@ public class SupprimerPizzaService extends MenuService {
 
 		String code = scanner.nextLine();
 
-		if (dao.pizzaExists(code)) {
+		if (dao.pizzaExists(code) == false) {
+
+			throw new DeletePizzaException("Cette pizza n'existe pas");
+
+		} else {
 			dao.deletePizza(code);
 
 			System.out.println("\nLa pizza a bien été supprimée !");
-
-		} else {
-			System.out.println("Suppression impossible, vous n'avez pas entré un code valide");
 
 		}
 
