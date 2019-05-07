@@ -1,0 +1,82 @@
+11:57:07.120 [main] INFO  f.d.p.PizzeriaAdminConsoleApp -
+				Démarrage de l'application
+11:57:10.131 [main] INFO  f.d.p.PizzeriaAdminConsoleApp -
+				Affichage de la liste
+11:59:07.812 [main] INFO  f.d.p.PizzeriaAdminConsoleApp -
+				Démarrage de l'application
+12:00:29.146 [main] INFO  f.d.p.PizzeriaAdminConsoleApp -
+				Démarrage de l'application
+12:00:54.711 [main] INFO  f.d.p.PizzeriaAdminConsoleApp -
+				Démarrage de l'application
+12:01:10.921 [main] INFO  f.d.p.PizzeriaAdminConsoleApp -
+				Démarrage de l'application
+12:01:37.523 [main] INFO  f.d.p.PizzeriaAdminConsoleApp -
+				Affichage de la liste
+12:01:43.586 [main] INFO  f.d.p.PizzeriaAdminConsoleApp -
+				Supression d'une pizza
+12:01:47.743 [main] INFO  f.d.p.PizzeriaAdminConsoleApp -
+				Fin de l'application
+12:08:58.416 [main] INFO  f.d.p.PizzeriaAdminConsoleApp -
+				Démarrage de l'application
+12:09:03.481 [main] INFO  fr.pizzeria.model.MenuService -
+				Traitement 1 : param = Suppression d'une pizza
+12:10:20.472 [main] INFO  f.d.p.PizzeriaAdminConsoleApp -
+				Démarrage de l'application
+12:10:22.370 [main] INFO  fr.pizzeria.model.MenuService -
+				Traitement 1 : param = Affichage de la liste
+12:10:27.743 [main] INFO  fr.pizzeria.model.MenuService -
+				Traitement = 
+12:11:20.633 [main] INFO  f.d.p.PizzeriaAdminConsoleApp -
+				Démarrage de l'application
+12:11:21.492 [main] INFO  f.d.p.PizzeriaAdminConsoleApp -
+				Démarrage de l'application
+12:11:24.771 [main] INFO  fr.pizzeria.model.MenuService -
+				Traitement = Suppression d'une pizza
+12:13:33.358 [main] INFO  f.d.p.PizzeriaAdminConsoleApp -
+				Démarrage de l'application
+12:13:45.599 [main] INFO  f.d.p.PizzeriaAdminConsoleApp -
+				Démarrage de l'application
+12:16:35.374 [main] INFO  f.d.p.PizzeriaAdminConsoleApp -
+				Démarrage de l'application
+12:16:47.953 [main] INFO  f.d.p.PizzeriaAdminConsoleApp -
+				Démarrage de l'application
+12:16:53.587 [main] INFO  fr.pizzeria.model.MenuService -
+				Traitement = Affichage de la liste
+12:17:56.338 [main] INFO  f.d.p.PizzeriaAdminConsoleApp -
+				Fin de l'application
+12:25:30.708 [main] INFO  f.d.p.PizzeriaAdminConsoleApp -
+				Démarrage de l'application
+12:30:23.997 [main] ERROR fr.pizzeria.model.MenuService -
+				L'utilisateur n'a pas entré de nom !
+12:30:23.997 [main] INFO  fr.pizzeria.model.MenuService -
+				Traitement  = Ajout d'une pizza à la liste
+12:31:21.931 [main] ERROR fr.pizzeria.model.MenuService -
+				L'utilisateur n'a pas entré de nom !
+12:31:21.931 [main] INFO  fr.pizzeria.model.MenuService -
+				Traitement  = Ajout d'une pizza à la liste
+12:33:36.977 [main] INFO  fr.pizzeria.model.MenuService -
+				Traitement  = Ajout d'une pizza à la liste null
+10:33:51.496 [main] INFO  fr.pizzeria.model.MenuService -
+				Traitement = Affichage de la liste
+10:33:56.841 [main] INFO  fr.pizzeria.model.MenuService -
+				Traitement = Suppression d'une pizza
+10:34:02.393 [main] INFO  fr.pizzeria.model.MenuService -
+				Traitement = Suppression d'une pizza
+10:34:06.305 [main] INFO  fr.pizzeria.model.MenuService -
+				Traitement = Suppression d'une pizza
+10:34:10.167 [main] INFO  fr.pizzeria.model.MenuService -
+				Traitement = Suppression d'une pizza
+10:34:25.957 [main] INFO  fr.pizzeria.model.MenuService -
+				Traitement = Affichage de la liste
+10:34:34.317 [main] INFO  fr.pizzeria.model.MenuService -
+				Traitement = Suppression d'une pizza
+10:34:39.938 [main] INFO  fr.pizzeria.model.MenuService -
+				Traitement = Suppression d'une pizza
+10:34:43.402 [main] INFO  fr.pizzeria.model.MenuService -
+				Traitement = Suppression d'une pizza
+10:34:46.102 [main] INFO  fr.pizzeria.model.MenuService -
+				Traitement = Affichage de la liste
+10:35:21.029 [main] INFO  fr.pizzeria.model.MenuService -
+				Traitement = Suppression d'une pizza
+10:35:23.405 [main] INFO  fr.pizzeria.model.MenuService -
+				Traitement = Affichage de la liste

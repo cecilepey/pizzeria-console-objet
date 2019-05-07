@@ -5,6 +5,9 @@ package fr.diginamic.pizzeria_console_objet;
 
 import java.util.Scanner;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import fr.pizzeria.exception.DeletePizzaException;
 import fr.pizzeria.exception.SavePizzaException;
 import fr.pizzeria.exception.UpdatePizzaException;
@@ -23,7 +26,12 @@ import fr.pizzeria.model.SupprimerPizzaService;
  */
 public class PizzeriaAdminConsoleApp {
 
+	/** LOG : Logger pour la console */
+	private static final Logger LOG = LoggerFactory.getLogger(PizzeriaAdminConsoleApp.class);
+
 	public static void main(String[] args) throws SavePizzaException, UpdatePizzaException, DeletePizzaException {
+
+		LOG.info("Démarrage de l'application");
 
 		Scanner sc = new Scanner(System.in);
 
@@ -45,6 +53,7 @@ public class PizzeriaAdminConsoleApp {
 				ListerPizzasService lister = new ListerPizzasService();
 
 				lister.executeUC(sc, pizzaDao);
+				new ListerPizzasService().executer("Affichage de la liste");
 
 				break;
 			case "2":
@@ -56,6 +65,7 @@ public class PizzeriaAdminConsoleApp {
 				} catch (SavePizzaException e) {
 					System.out.println(e.getMessage());
 				}
+				new AjouterPizzaService().executer("Ajout d'une pizza à la liste");
 
 				break;
 			case "3":
@@ -67,6 +77,7 @@ public class PizzeriaAdminConsoleApp {
 				} catch (UpdatePizzaException e) {
 					System.out.println(e.getMessage());
 				}
+				new ModifierPizzaService().executer("Modification d'une pizza");
 
 				break;
 			case "4":
@@ -78,7 +89,7 @@ public class PizzeriaAdminConsoleApp {
 				} catch (DeletePizzaException e) {
 					System.out.println(e.getMessage());
 				}
-
+				new SupprimerPizzaService().executer("Suppression d'une pizza");
 				break;
 
 			default:
@@ -96,6 +107,7 @@ public class PizzeriaAdminConsoleApp {
 		{
 			System.out.println("\nAu revoir !");
 		}
+		LOG.info("Fin de l'application");
 
 	}
 

@@ -24,4 +24,10 @@ public class ListerPizzasService extends MenuService {
 		}
 
 	}
+
+	@Override
+	public void executer(String param) {
+		LOG.info("Traitement = {}", param);
+
+	}
 }

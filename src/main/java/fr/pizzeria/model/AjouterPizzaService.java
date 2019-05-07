@@ -37,6 +37,7 @@ public class AjouterPizzaService extends MenuService {
 			nom = scanner.nextLine();
 
 			if (nom.isEmpty()) {
+				LOG.error("L'utilisateur n'a pas entré de nom !");
 				throw new SavePizzaException("Vous n'avez pas entré de nom");
 			} else {
 				System.out.println("Veuillez saisir le prix : ");
@@ -64,6 +65,12 @@ public class AjouterPizzaService extends MenuService {
 			}
 
 		}
+
+	}
+
+	@Override
+	public void executer(String param) {
+		LOG.info("Traitement  = {}", param);
 
 	}
 
