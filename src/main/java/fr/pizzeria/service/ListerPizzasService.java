@@ -1,9 +1,12 @@
 /**
  * 
  */
-package fr.pizzeria.model;
+package fr.pizzeria.service;
 
 import java.util.Scanner;
+
+import fr.pizzeria.model.IPizzaDao;
+import fr.pizzeria.model.Pizza;
 
 /**
  * 

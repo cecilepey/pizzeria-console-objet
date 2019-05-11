@@ -1,13 +1,16 @@
 /**
  * 
  */
-package fr.pizzeria.model;
+package fr.pizzeria.service;
 
 import java.util.Scanner;
 
 import org.apache.commons.lang3.math.NumberUtils;
 
 import fr.pizzeria.exception.SavePizzaException;
+import fr.pizzeria.model.CategoriePizza;
+import fr.pizzeria.model.IPizzaDao;
+import fr.pizzeria.model.Pizza;
 
 /**
  * Classe qui gère l'exécution de l'ajout d'une pizza

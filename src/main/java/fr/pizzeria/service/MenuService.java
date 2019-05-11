@@ -1,7 +1,7 @@
 /**
  * 
  */
-package fr.pizzeria.model;
+package fr.pizzeria.service;
 
 import java.util.Scanner;
 
@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import fr.pizzeria.exception.StockageException;
+import fr.pizzeria.model.IPizzaDao;
 
 /**
  * Classe qui appelle la dao pour faire une action sur la liste des pizza

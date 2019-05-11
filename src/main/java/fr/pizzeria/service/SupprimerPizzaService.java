@@ -1,11 +1,12 @@
 /**
  * 
  */
-package fr.pizzeria.model;
+package fr.pizzeria.service;
 
 import java.util.Scanner;
 
 import fr.pizzeria.exception.DeletePizzaException;
+import fr.pizzeria.model.IPizzaDao;
 
 /**
  * Classe qui gère l'exécution de la suppression d'une pizza

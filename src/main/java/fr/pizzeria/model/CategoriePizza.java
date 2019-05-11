@@ -36,7 +36,7 @@ public enum CategoriePizza {
 	 * @param categorie
 	 * @return booleen
 	 */
-	static boolean categorieExists(String categorie) {
+	public static boolean categorieExists(String categorie) {
 
 		CategoriePizza[] cate = CategoriePizza.values();
 		for (CategoriePizza c : cate) {
